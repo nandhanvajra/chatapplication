@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/homepg.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="navtext">
+                <h1>CHATAPP</h1>
+            </div>
+            <div class="navlinks">
+                <div class="username"><%= userinfo.username %></div>
+                <a class="login" href="/logout">logout</a>
+                
+            </div>
+        </header>
+        <div class="maincontent">
+            <div class="sidebar">
+                <div class="roomdetails">
+                    <form id="roomform">
+                    <label for="room">room:</label>
+                    <input type="text" id="room" name="room">
+                    <button id="roomjoin">join</button>
+                    </form>
+                </div>
+                <div class="roomsdetail">
+
+                </div>
+            </div>
+            <div class="mainbar">
+
+            </div>
+        </div>
+    </div>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="javascripts/socket.js"  type="module"></script>
+    <script src="javascripts/homepg.js"  type="module"></script>
+</body>
+</html>

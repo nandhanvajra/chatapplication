@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/signup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="navtext">
+                <h1>CHATAPP</h1>
+            </div>
+            <div class="navlinks">
+                <a class="login" href="/login">login</a>
+                <a  class="signup" href="/signup">signup</a>
+            </div>
+        </header>
+        <div class="maincont">
+            <div class="signupformblock">
+                <div class="closesignup">
+                    <button class="closesignup">X</button>
+                </div>
+                <form  id="signupform">
+                <div class="formele">
+                    <label for="username">username</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="formele">
+                    <label for="email">email</label>
+                    <input type="email" id="email" name="email">
+                    <h1 id="emailallexist"></h1>
+                </div>
+                <div class="formele">
+                    <label for="password">password</label>
+                    <input type="password" name="password" id="password">
+                    <div id="passerr"></div>
+                </div>
+                
+                <div class="formele">
+                    <label for="confirmpassword">confirmpassword</label>
+                    
+                    <input type="password" name="confirmpassword" id="confirmpassword">
+                    <div id="confpasserr"></div>
+                </div>
+                    <input type="submit" name="signup" id="signup">
+                </form>
+
+            </div>
+            
+        </div>
+        
+    </div>
+    <script src="javascripts/signup.js"></script>
+</body>
+</html>

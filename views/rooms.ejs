@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/homepg.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="navtext">
+                <h1>CHATAPP</h1>
+            </div>
+            <div class="navlinks">
+               <div class="username" data-userinfo="<%= userinfo.username %>"></div>
+                <a class="login" href="/logout">logout</a>
+            </div>
+        </header>
+        <div class="maincontent">
+            <div class="sidebar">
+                <div class="roomdetails"> 
+                    <form id="roomform">
+                        <label for="room">room:</label>
+                        <input type="text" id="room" name="room">
+                        <button type="submit" id="roomjoin">join</button>
+                    </form>
+                </div>
+                <div class="roomsdetail"></div>
+            </div>
+            <div class="mainbar">
+                <div class="message">
+                    <div class="msgs">
+                        <% if (Array.isArray(messages) && messages.length > 0) { %>
+                            <% messages.forEach((msg) => { %>
+                                <div class="message">
+                                    <div class="msgs">
+                                        <div class="flexwr">
+                                            <div class="uname"><%= msg.username %></div>
+                                            <div class="chatblock"><%= msg.message %></div>
+                                            <div class="time"><%= msg.time %></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        <% } else if (messages) { %>
+                            <div class="message">
+                                <div class="msgs">
+                                    <div class="flexwr">
+                                        <div class="uname"><%= messages.username %></div>
+                                        <div class="chatblock"><%= messages.message %></div>
+                                        <div class="time"><%= messages.time %></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } else { %>
+                            <div class="message">
+                                <div class="msgs">
+                                    <div class="flexwr">
+                                        <div class="uname">No messages</div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        
+                    </div>
+                </div>
+                <form id="sendmsg">
+                    <input type="text" name="msg" id="msg">
+                    <button type="submit">send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="javascripts/socket.js" type="module"></script>
+    <script src="javascripts/rooms.js" type="module"></script>
+</body>
+</html>
